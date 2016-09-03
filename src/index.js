@@ -45,22 +45,22 @@ export default function (KoaRouter) {
 
     /* istanbul ignore else */
     if (is('create')) {
-      this.post(urljoin(route), controller[options.create || 'create'])
+      this.post(urljoin(route), controller[options.create || 'create'].bind(controller))
     }
 
     /* istanbul ignore else */
     if (is('show')) {
-      this.get(urljoin(route, ':id'), controller[options.show || 'show'])
+      this.get(urljoin(route, ':id'), controller[options.show || 'show'].bind(controller))
     }
 
     /* istanbul ignore else */
     if (is('update')) {
-      this.put(urljoin(route, ':id'), controller[options.update || 'update'])
+      this.put(urljoin(route, ':id'), controller[options.update || 'update'].bind(controller))
     }
 
     /* istanbul ignore else */
     if (is('destroy')) {
-      this.delete(urljoin(route, ':id'), controller[options.destroy || 'destroy'])
+      this.delete(urljoin(route, ':id'), controller[options.destroy || 'destroy'].bind(controller))
     }
 
     return this
