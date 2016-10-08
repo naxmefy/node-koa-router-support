@@ -1,6 +1,6 @@
 {
   "name": "@naxmefy/koa-router-support",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "koa-router support (koa2)",
   "main": "lib/index.js",
   "repository": {
